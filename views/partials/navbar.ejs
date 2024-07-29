@@ -9,11 +9,13 @@
     <nav>
       <h5>Home for Pets</h5>
       <a href="#">Adopt</a>
-      <a href="#">Rehome</a>
       <% if (user) { %>
+        <a href="pets/rehome">Rehome</a>
         <a href="auth/logout">Logout</a>
       <% } else { %>
         <a href="auth/sign-in">Sign In</a>
         <a href="auth/sign-up">Sign Up</a>
       <% } %>
     </nav>
+  </body>
+</html>

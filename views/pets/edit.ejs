@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Edit <%=pet.name%> information</h1>
-    <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
+    <fieldset>
+      <legend>Edit <%=pet.name%> information</legend> <br>
+
       <label for="name">Name:</label>
       <input value="<%=pet.name%>" type="text" id="name" name="name" required />
       <br /><br />
 
       <label for="species">Species:</label>
-      <input
-        value="<%=pet.species%>"
-        type="text"
-        id="species"
-        name="species"
-      /><br /><br />
+      <input value="<%=pet.species%>" type="text" id="species" name="species" /><br /><br />
 
       <label for="gender">Gender:</label>
       <select id="gender" name="gender">
         <option value="" disabled>Select gender</option>
-        <option value="Female" <%=pet.gender === 'Female' ? 'selected' : ''%>>Female</option>
-        <option value="Male" <%=pet.gender === 'Male' ? 'selected' : ''%>>Male</option>
+        <option value="Female" <%=pet.gender==='Female' ? 'selected' : '' %>>Female</option>
+        <option value="Male" <%=pet.gender==='Male' ? 'selected' : '' %>>Male</option>
       </select>
       <br /><br />
 
       <label for="description">Description:</label>
-      <input
-        value="<%=pet.description%>"
-        type="text"
-        id="description"
-        name="description"
-      /><br /><br />
+      <input value="<%=pet.description%>" type="text" id="description" name="description" /><br /><br />
 
       <label for="location">Location:</label>
-      <input
-        value="<%=pet.location%>"
-        type="text"
-        id="location"
-        name="location"
-      /><br /><br />
+      <input value="<%=pet.location%>" type="text" id="location" name="location" /><br /><br />
 
       <!-- <label for="photo">Photo:</label>
       <input
-        value="<%=pet.photo%>"
+        value="<%=/*pet.photo*/%>"
         type="file"
         id="photo"
         name="photo"
       /><br /><br /> -->
 
       <button type="submit">Edit</button>
-    </form>
-  </body>
+    </fieldset>
+  </form>
+</body>
+
 </html>

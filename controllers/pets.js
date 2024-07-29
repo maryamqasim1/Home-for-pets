@@ -12,6 +12,10 @@ const Pets = require('../models/pet');
 //     // userType: 'user'
 // };
 
+router.get('/rehome', (req, res) => {
+    res.render('pets/rehome.ejs');
+})
+
 router.get('/', async (req, res) => {
     const pets = await Pets.find();
     res.render('pets/index.ejs', { pets });
