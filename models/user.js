@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: 'user',
-        enum: ['admin', 'user']
+        // enum: ['admin', 'user']
     },
     pets: [{ type: mongoose.Schema.ObjectId, ref: 'Pet' }]
 });

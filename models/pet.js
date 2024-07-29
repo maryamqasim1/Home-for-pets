@@ -26,7 +26,8 @@ const petSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
-        enum: ['Available', 'Adopted']
+        default: 'Available',
+        // enum: ['Available', 'Adopted']
     },
     owner: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });

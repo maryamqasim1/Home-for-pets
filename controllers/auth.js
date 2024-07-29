@@ -45,8 +45,10 @@ router.post('/sign-in', async (req, res) => {
 
         req.session.user = {
             email: userInDB.email,
+            userType: userInDB.userType
         };
         res.redirect('/');
+
     } catch (error) {
         console.error(error);
     }

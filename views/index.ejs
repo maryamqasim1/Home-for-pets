@@ -1,5 +1,9 @@
 <%- include('./partials/navbar.ejs') %>
     <h1>Find your new best friend!</h1>
     <p>Every pet deserves a loving home, and your next best friend is just a click away!</p>
+    <% if (user && user.userType === 'admin') { %>
+     <button onclick="location.href='/pets/new'">Add Pet</button>
+    <% } %>
+    <button onclick="location.href='/pets'">Show Pets</button>
 </body>
 </html>

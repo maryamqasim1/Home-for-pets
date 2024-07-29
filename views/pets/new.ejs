@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home for Pets</title>
+  </head>
+  <body>
+    <h1>Add Pet For Adoption</h1>
+    <form action="/pets" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="species">Species:</label>
+      <input type="text" id="species" name="species" /><br /><br />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select gender</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
+      <br /><br />
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" /><br /><br />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" /><br /><br />
+
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

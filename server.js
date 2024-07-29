@@ -10,6 +10,7 @@ require('./config/database');
 
 const app = express();
 const authCtrl = require("./controllers/auth");
+const petsCtrl = require("./controllers/pets");
 
 // MIDDLEWARE
 app.use(morgan('dev'));
@@ -23,13 +24,25 @@ app.use(
     })
 );
 
-app.get('/', (req, res, next) => {
+///////////// for testing remove later ////////////////////////////
+const user = {
+    email: 'admin@admin.com',
+    userType: 'admin',
+    // email: 'user@user.com',
+    // userType: 'user'
+};
+
+app.get('/', (req, res) => {
     res.render('index.ejs', {
-        user: req.session.user
+        // user: req.session.user,
+        // userType: req.session.user,
+        user: user,
     });
 });
+////////////////////////////////////////////////
 
 app.use("/auth", authCtrl);
+app.use("/pets", petsCtrl);
 
 app.listen(3000, () => {
     console.log('Listening on port 3000');
