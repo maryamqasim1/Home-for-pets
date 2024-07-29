@@ -13,8 +13,10 @@
       </li>
     </ul>
     <% if (user && user.userType === 'admin') { %>
-    <a href="">Edit</a>
-    <a href="">Delete</a>
+    <button onclick="location.href='/pets/<%=pet._id%>/edit'">Edit</button>
+    <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
     <% } %>
   </body>
 </html>

@@ -25,18 +25,18 @@ app.use(
 );
 
 ///////////// for testing remove later ////////////////////////////
-const user = {
-    email: 'admin@admin.com',
-    userType: 'admin',
-    // email: 'user@user.com',
-    // userType: 'user'
-};
+// const user = {
+//     email: 'admin@admin.com',
+//     userType: 'admin',
+//     // email: 'user@user.com',
+//     // userType: 'user'
+// };
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {
-        // user: req.session.user,
-        // userType: req.session.user,
-        user: user,
+        user: req.session.user,
+        userType: req.session.user,
+        // user: user,
     });
 });
 ////////////////////////////////////////////////
