@@ -6,13 +6,28 @@
     <title>Document</title>
   </head>
   <body>
+    <h2>Pet info</h2>
     <ul>
-      <li>
+      <li style="list-style-type: none">
         <p>Name: <%= pet.name %></p>
+        <p>Species: <%= pet.species %></p>
         <p>Gender: <%= pet.gender %></p>
+        <p>Description: <%= pet.description %></p>
+        <p>Location: <%= pet.location %></p>
+        <p>photo: <%= pet.photo %></p>
+        <p>Status: <%= pet.status %></p>
       </li>
     </ul>
-    <% if (user && user.userType === 'admin') { %>
+    <% if (pet.owner) { %>
+    <h2>owner contact info</h2>
+    <ul>
+      <li style="list-style-type: none">
+        <p>Owner: <%= ownerInfo.name %></p>
+        <p>Phone: <%= ownerInfo.phone %></p>
+        <p>Email: <%= ownerInfo.email %></p>
+      </li>
+    </ul>
+    <% } %> <% if (user && user.userType === 'admin') { %>
     <button onclick="location.href='/pets/<%=pet._id%>/edit'">Edit</button>
     <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
       <button type="submit">Delete</button>

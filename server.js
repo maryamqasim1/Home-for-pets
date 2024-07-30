@@ -26,11 +26,12 @@ app.use(
 
 ///////////// for testing remove later ////////////////////////////
 // const user = {
-//     email: 'admin@admin.com',
-//     userType: 'admin',
-//     // email: 'user@user.com',
-//     // userType: 'user'
+//     // email: 'admin@admin.com',
+//     // userType: 'admin',
+//     email: 'user@user.com',
+//     userType: 'user'
 // };
+// console.log(user.email)
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {
