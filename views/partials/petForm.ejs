@@ -1,22 +1,33 @@
-<label for="name">Pet Name:</label>
-<input value="<%= pet ? pet.name : '' %>" type="text" id="name" name="name" required /><br /><br />
+<div class="mb-3">
+  <label class="form-label" for="name">Pet Name:</label>
+  <input class="form-control" value="<%= pet ? pet.name : '' %>" type="text" id="name" name="name" required />
+</div>
 
-<label for="species">Species:</label>
-<input value="<%= pet ? pet.species : '' %>" type="text" id="species" name="species" /><br /><br />
+<div class="mb-3">
+  <label class="form-label" for="species">Species:</label>
+  <input class="form-control" value="<%= pet ? pet.species : '' %>" type="text" id="species" name="species" />
+</div>
 
-<label for="gender">Gender:</label>
-<select id="gender" name="gender" required>
-  <option value="" disabled <%=pet===null ? 'selected' : '' %>>Select gender</option>
-  <option value="Female" <%=pet && pet.gender==='Female' ? 'selected' : '' %>>Female</option>
-  <option value="Male" <%=pet && pet.gender==='Male' ? 'selected' : '' %>>Male</option>
-</select>
-<br /><br />
+<div class="mb-3">
+  <label class="form-label" for="gender">Gender:</label>
+  <select class="form-select form-select-sm" id="gender" name="gender" required>
+    <option value="" disabled <%=pet===null ? 'selected' : '' %>>Select gender</option>
+    <option value="Female" <%=pet && pet.gender==='Female' ? 'selected' : '' %>>Female</option>
+    <option value="Male" <%=pet && pet.gender==='Male' ? 'selected' : '' %>>Male</option>
+  </select>
+</div>
 
-<label for="description">Description:</label>
-<input value="<%= pet ? pet.description : '' %>" type="text" id="description" name="description" /><br /><br />
+<div class="mb-3">
+  <label class="form-label" for="description">Description:</label>
+  <input class="form-control" value="<%= pet ? pet.description : '' %>" type="text" id="description" name="description" />
+</div>
 
-<label for="location">Location:</label>
-<input value="<%= pet ? pet.location : '' %>" type="text" id="location" name="location" /><br /><br />
+<div class="mb-3">
+  <label class="form-label" for="location">Location:</label>
+  <input class="form-control" value="<%= pet ? pet.location : '' %>" type="text" id="location" name="location" />
+</div>
 
-<label for="photo">Photo:</label>
-<input value="<%= pet ? pet.photo : '' %>" type="file" id="photo" name="photo" /><br /><br />
+<div class="mb-3">
+  <label class="form-label" for="photo">Photo:</label>
+  <input class="form-control form-control-sm" value="<%= pet ? pet.photo : '' %>" type="file" id="photo" name="photo" />
+</div>

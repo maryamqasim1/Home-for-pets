@@ -23,15 +23,7 @@ app.use(
         saveUninitialized: true,
     })
 );
-
-///////////// for testing remove later ////////////////////////////
-// const user = {
-//     // email: 'admin@admin.com',
-//     // userType: 'admin',
-//     email: 'user@user.com',
-//     userType: 'user'
-// };
-// console.log(user.email)
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {
@@ -40,7 +32,6 @@ app.get('/', (req, res) => {
         // user: user,
     });
 });
-////////////////////////////////////////////////
 
 app.use("/auth", authCtrl);
 app.use("/pets", petsCtrl);
