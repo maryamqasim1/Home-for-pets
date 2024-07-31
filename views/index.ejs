@@ -1,9 +1,32 @@
-<%- include('./partials/navbar.ejs') %>
-    <h1>Find your new best friend!</h1>
-    <p>Every pet deserves a loving home, and your next best friend is just a click away!</p>
-    <% if (user && user.userType === 'admin') { %>
-     <button onclick="location.href='/pets/new'">Add Pet</button>
-    <% } %>
-    <button onclick="location.href='/pets'">Show Pets</button>
-</body>
+    <%- include('./partials/navbar.ejs') %>
+        <div class="mainContainer">
+            <div class="left-container">
+                <h1>Find Your New Best Friend!</h1>
+                <p>Every pet deserves a loving home, and your next best friend is just a click away!</p>
+                <div class="buttons">
+                    <% if (!user) { %>
+                        <button class="light-button" onclick="location.href='/auth/sign-in'">Sign in</button>
+                        <button class="dark-button" onclick="location.href='/auth/sign-up'">Sign up</button>
+                    <% } %>
+    
+                    <% if (user && user.userType === 'admin') { %>
+                        <button class="light-button" onclick="location.href='/pets/new'">Add Pet</button>
+                    <% } %>
+
+                    <% if (user) { %>
+                        <button class="light-button" onclick="location.href='/pets'">Show Pets</button>
+                    <% } %>
+
+                    <% if (user && user.userType === 'user') { %>
+                        <button class="light-button" onclick="location.href='/pets/rehome'">Pet Rehoming</button>
+                    <% } %>
+                </div>
+            </div>
+            <div class="img">
+                <img 
+                src="https://img.freepik.com/free-vector/animal-shelter-concept-illustration_114360-2838.jpg?t=st=1722445229~exp=1722448829~hmac=4480ba721ed41b78b0d339ebbad346eedc631d1e111411e1d649f3424591ce8c&w=900"
+                alt="cartoon animal shelter picture">
+            </div>
+        </div>
+    </body>
 </html>

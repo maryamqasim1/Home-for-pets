@@ -9,11 +9,11 @@
     <h1>All Pets</h1>
     <ul>
       <% pets.forEach(pet => { %>
-      <li onclick="location.href='/pets/<%= pet._id %>'">
+      <li>
         <p>Name: <%= pet.name %></p>
         <p>Gender: <%= pet.gender %></p>
+        <button onclick="location.href='/pets/<%= pet._id %>'">Details</button>
       </li>
-      <button>Adopt</button>
       <br />
       <%}); %>
     </ul>
