@@ -11,7 +11,6 @@ require('./config/database');
 const app = express();
 const authCtrl = require("./controllers/auth");
 const petsCtrl = require("./controllers/pets");
-const PORT = process.env.PORT || 3000;
 
 // MIDDLEWARE
 app.use(morgan('dev'));
@@ -37,6 +36,6 @@ app.get('/', (req, res) => {
 app.use("/auth", authCtrl);
 app.use("/pets", petsCtrl);
 
-app.listen(PORT, () => {
+app.listen(3000, () => {
     console.log('Listening on port 3000');
 });
