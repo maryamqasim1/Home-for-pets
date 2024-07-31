@@ -10,12 +10,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
   <body>
     <div class="container mt-4">
       <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
         <fieldset class="border p-4 mb-4">
-          <h4>Edit <%=pet.name%> information</h4>
+          <h4><i class="fa fa-arrow-left" onclick="location.href='/pets'"></i> Edit <%=pet.name%> information</h4>
           <br />
           <%- include('../partials/petForm.ejs', {pet: pet}) %>
           <button type="submit" class="btn btn-primary">Edit</button>

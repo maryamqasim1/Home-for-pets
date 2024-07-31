@@ -44,6 +44,7 @@ router.post('/sign-in', async (req, res) => {
             return res.send("Login failed. Please try again.");
 
         req.session.user = {
+            id: userInDB._id,
             email: userInDB.email,
             userType: userInDB.userType
         };
